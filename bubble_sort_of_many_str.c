@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Ğ´Ã°ÅİÅÅĞò¿ÉÒÔÅÅĞò¶à¸ö×Ö·û´® */
-void string_bubble_sort(char * str[], int sz)	//×Ö·û´®Ö¸ÕëÊı×é£¬ ×Ö·û´®Ö¸Õë¸öÊı
+/* å†™å†’æ³¡æ’åºå¯ä»¥æ’åºå¤šä¸ªå­—ç¬¦ä¸² */
+void string_bubble_sort(char * str[], int sz)	//å‚æ•°ï¼šå­—ç¬¦ä¸²æŒ‡é’ˆæ•°ç»„ï¼Œ å­—ç¬¦ä¸²æŒ‡é’ˆä¸ªæ•°
 {
 	int i = 0,  j= 1;
 	int flag = 0;
