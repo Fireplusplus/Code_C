@@ -11,7 +11,7 @@ void string_bubble_sort(char * str[], int sz)	//参数：字符串指针数组�
 	for (i = 1; i < sz; i++)
 	{
 		flag = 0;
-		for (j = 1; j < sz; j++)
+		for (j = 1; j < sz - i; j++)
 		{
 			if (strcmp(str[j - 1], str[j]) > 0)
 			{
