@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <assert.h>
 
-char * my_strcpy(char * dest, const char * src)	//const使src不能做左值，防止while里dest和src写反
+char * my_strcpy(char * dest, const char * src)	//const浣縮rc涓嶈兘鍋氬乏鍊硷紝闃叉while閲宒est鍜宻rc鍐欏弽
 {
 	char *ch = dest;
-	assert(dest != NULL);						//断言帮助调试
+	assert(dest != NULL);						//鏂█甯姪璋冭瘯
 	assert(src != NULL);
-	while (*dest++ = *src++)					//while最简	
+	while (*dest++ = *src++)					//while鏈�绠�	
 		;
-	return dest;								//链式访问 printf("%s", my_strcpy(dest, src));
+	return dest;								//閾惧紡璁块棶 printf("%s", my_strcpy(dest, src));
 }
 
 int main(void)
