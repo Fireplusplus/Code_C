@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* 在屏幕上打印杨辉三角 */
+/* 脭脷脝脕脛禄脡脧麓貌脫隆脩卯禄脭脠媒陆脟 */
 
 int main(void)
 {
