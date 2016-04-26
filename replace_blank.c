@@ -43,7 +43,7 @@ void replace_blank(char *str)
 
 int main()
 {
-	char arr[] = "we are happy";
+	char arr[100] = "we are happy";
 	replace_blank(arr);
 
 	printf("%s\n", arr);
