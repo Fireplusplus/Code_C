@@ -8,7 +8,7 @@ void swap(int *elem1, int *elem2)
 	*elem2 = tmp;
 }
 //快速排序中的parition函数
-int parition(int *data, int len, int start, int end)
+int partition(int *data, int len, int start, int end)
 {
 	int small = 0;
 	int index = 0;
@@ -47,20 +47,20 @@ int more_than_half_num(int data[], int len)
 		return -1;
 	
 	mid = len >> 1;
-	index = parition(data, len, 0, len - 1);
+	index = partition(data, len, 0, len - 1);
 	while (index != mid)
 	{
 		if (index > mid)
 		{	
 			end = index - 1;
-			index = parition(data, len, start, end);
+			index = partition(data, len, start, end);
 		}
 		else
 		{
 			start = index + 1;
-			index = parition(data, len, start, end);
+			index = partition(data, len, start, end);
 		}
-	}
+}
 
 	for (i = 0; i < len; i++)
 	{
@@ -69,6 +69,39 @@ int more_than_half_num(int data[], int len)
 	}
 	if (cnt > mid)		//存在出现次数超过一半的数
 		return index;
+	else
+		return -1;
+}
+
+int more_than_half_num_2(int data[], int len)
+{
+	int i = 0;
+	int result = 0;
+	int cnt = 1;
+	if (data == NULL || len <= 0)
+		return -1;
+
+
+	for (i = 1; i < len; i++)
+	{
+		if (0 == cnt)
+		{
+			result = i;
+			cnt = 1;
+		}
+		else if (data[i] == data[result])
+			cnt++;
+		else
+			cnt--;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		if (data[i] == data[result])
+			cnt++;
+	}
+	if (cnt > len / 2)
+		return result;
 	else
 		return -1;
 }
@@ -84,7 +117,7 @@ int main()
 	int test5[] = {1, 2, 1, 2, 2};	//2
 	int test6[5] = {0};		//0 
 
-	int ret1 = more_than_half_num(test1, 5);
+/*	int ret1 = more_than_half_num(test1, 5);
 	int ret2 = more_than_half_num(test2, 1);
 	int ret3 = more_than_half_num(test3, 0);
 	int ret4 = more_than_half_num(test4, 0);
@@ -97,6 +130,20 @@ int main()
 	printf("not exist ? %d\n", ret4);
 	printf("2 ? %d\n",test5[ret5]);
 	printf("0 ? %d\n", test6[ret6]);
+*/
+	int ret1 = more_than_half_num_2(test1, 5);
+	int ret2 = more_than_half_num_2(test2, 1);
+	int ret3 = more_than_half_num_2(test3, 0);
+	int ret4 = more_than_half_num_2(test4, 0);
+	int ret5 = more_than_half_num_2(test5, 5);
+	int ret6 = more_than_half_num_2(test6, 5);
 
+	printf("\n");
+	printf("not exist ? %d\n", ret1);
+	printf("0 ? %d\n", test2[ret2]);
+	printf("not exist ? %d\n", ret3);
+	printf("not exist ? %d\n", ret4);
+	printf("2 ? %d\n",test5[ret5]);
+	printf("0 ? %d\n", test6[ret6]);
 	return 0;
 }
