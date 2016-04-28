@@ -60,7 +60,7 @@ int more_than_half_num(int data[], int len)
 			start = index + 1;
 			index = parition(data, len, start, end);
 		}
-}
+	}
 
 	for (i = 0; i < len; i++)
 	{
