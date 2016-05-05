@@ -30,7 +30,7 @@ void reverse(char *str1, char *str2)
 	}
 }
 
-char *any_two_unsigned_nums_add_core(const char *elem1, int flag1, const char *elem2, int flag2, char *result)
+char *any_two_nums_add_core(const char *elem1, int flag1, const char *elem2, int flag2, char *result)
 {
 	int carry = 0;
 	int sum = 0;
@@ -121,7 +121,7 @@ char *any_two_nums_add(const char *elem1, const char *elem2, char *result)
 
 	if (((-1 == flag1) && (-1 == flag2)) || ((1 == flag1) && (1 == flag2)))
 	{	
-		ret = any_two_unsigned_nums_add_core(elem1, flag1, elem2, flag2, result);
+		ret = any_two_nums_add_core(elem1, flag1, elem2, flag2, result);
 		tmp = ret;
 
 		if (flag1 == -1)
@@ -138,7 +138,7 @@ char *any_two_nums_add(const char *elem1, const char *elem2, char *result)
 	}
 	else
 	{
-		ret = any_two_unsigned_nums_add_core(elem1, flag1, elem2, flag2, result);
+		ret = any_two_nums_add_core(elem1, flag1, elem2, flag2, result);
 		tmp = ret;
 		while (*tmp)
 			tmp++;
