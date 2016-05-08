@@ -12,7 +12,7 @@ typedef struct ListNode
 	struct ListNode *p_next;
 }NODE, *PNODE;
 
-PNODE find_Kth_to_tail(PNODE head, int k)
+/*PNODE find_Kth_to_tail(PNODE head, int k)
 {
 	static int cnt = 0;
 	static int flag = 0;
@@ -47,7 +47,7 @@ PNODE find_Kth_to_tail(PNODE head, int k)
 			return NULL;
 	}
 	
-}
+}*/
 
 PNODE find_Kth_to_tail(PNODE head, int k)
 {
@@ -94,7 +94,7 @@ int main()
 	p4->val = 4;
 	p4->p_next = NULL;
 
-	ret = find_last_Kth_2(p1, 5);
+	ret = find_Kth_to_tail(p1, 5);
 	if (ret)
 		printf("%d\n", ret->val);
 	else
