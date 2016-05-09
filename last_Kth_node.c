@@ -77,6 +77,18 @@ PNODE find_Kth_to_tail(PNODE head, int k)
 	return left;
 }
 
+void distroy(PNODE head)
+{
+	PNODE tmp = NULL;
+
+	while (NULL != head)
+	{
+		tmp = head;
+		head = head->p_next;
+		free(tmp);
+	}
+}
+
 int main()
 {
 	PNODE p1 = (PNODE)malloc(sizeof(NODE));	
@@ -100,6 +112,6 @@ int main()
 	else
 		printf("没找到\n");
 
-	
+	distroy(p1);
 	return 0;
 }
