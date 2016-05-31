@@ -71,7 +71,7 @@ double AvgTime(int job[][2], int n)
 	
 	for (i = 0; i < n - 1; i++)
 	{
-		time += job[i][1];
+		time += job[i][1] * (n - i - 1);
 	}
 	return time / (double)n;
 }
