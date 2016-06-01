@@ -4,7 +4,7 @@
 void ProgressBar()
 {
 	char arr[102] = {'\0'};
-	char imag[] = "|/-\\";
+	char *imag = "|/-\\";
 	int n = 100, i = 0;
 	while (i <= n)
 	{
