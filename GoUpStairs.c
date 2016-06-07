@@ -10,7 +10,8 @@ public:
         // write code here
         long long n1 = 0, n2 = 1;
         int i, tmp;
-        
+        if (n <= 0)
+            return 0;
         for (i = 0; i < n; i++)
         {
             tmp = n2;
